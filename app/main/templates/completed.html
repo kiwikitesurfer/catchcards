@@ -1,0 +1,15 @@
+<ion-view title="Completed" hide-back-button="true" id="page4" class=" ">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="completed-cards" class=" ">
+
+            <ion-item class="item-thumbnail-left  " ng-repeat="completedList in completedLists" 
+                href="#/app/completedLists/{{completedList.id}}">
+                <div class="row">
+                    <div class="col">{{completedList.date}}</div>
+                    <div class="col">{{completedList.species}}</div>
+                    <div class="col">{{completedList.weight}} </div>
+                </div>                  
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

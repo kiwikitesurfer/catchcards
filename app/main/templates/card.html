@@ -1,0 +1,91 @@
+<ion-view title="Card" id="page2" class=" ">
+    <ion-content padding="true" class=" manual-remove-top-padding has-header">
+        <form id="card-form4" class="list ">
+            <div class="item item-body " id="card-list-item-container1">
+                <form id="card-form6" class="list ">
+                    <label class="item item-input " id="userName" name="userName">
+                        <span class="input-label">Name:{{thing.userName}}</span><!-- need to pull selectedName fro profile-->
+                        <input type="text" ng-model="cardData.userName">
+                    </label>
+                </form>
+
+
+                <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
+                <form id="card-form1" class="list ">
+                    <label class="item item-input" id="currentDate" name="currentDate">
+                        <span class="input-label">currentDate</span>
+                        <input type="date" placeholder="" ng-model="cardData.currentDate">
+                        <!--<button ng-click="">{{currentDate}}</button>    <!--use current date needs fixing-->
+                    </label>
+                    <label class="item item-input" id="species" name="species">
+                        <span class="input-label">Species</span>
+                        <input type="text" placeholder="" ng-model="cardData.newSpecies">
+                    </label>
+                    <label class="item item-input " id="timeHooked" name="timeHooked">
+                        <span class="input-label">Hooked</span>
+                        <input type="time" placeholder="" ng-model="cardData.newHooked">
+                    </label>
+                    <label class="item item-input " id="timeLanded" name="timeLanded">
+                        <span class="input-label">Landed</span>
+                        <input type="time" placeholder="" ng-model="cardData.newLanded">
+                    </label>
+                    <label class="item item-select " id="method" name="method" >
+                        <span class="input-label">Catch Method</span>
+                        <select ng-model="cardData.newMethod">
+                            <option>Bait</option>
+                            <option>Lure</option>
+                            <option>Fly</option>
+                        </select>
+                    </label>
+                    <label class="item item-input " id="tagNumber" name="tagNumber">
+                        <span class="input-label">Tag</span>
+                        <input type="number" placeholder="" ng-model="cardData.newTag">
+                    </label>
+                    <label class="item item-input " id="location" name="location">
+                        <span class="input-label">Location</span>
+                        <input type="text" placeholder="" ng-model="cardData.newLocation">
+                    </label>
+                    <label class="item item-input" id="boatName" name="boatName">
+                        <span class="input-label">Boat Name</span>
+                        <input type="text" placeholder="" ng-model="cardData.newBoatName">
+                    </label>
+                    <label class="item item-input" id="skipperName" name="skipperName">
+                        <span class="input-label">S_Name</span>
+                        <input type="text" placeholder="Captain" ng-model="cardData.newSkipper">
+                    </label>
+                    
+                    <div class="spacer" style="width: 266px; height: 10px;"></div>
+                    <div class="row">
+                        <div class="col col-50">
+                        <button id="card-clear" class="button button-positive" ng-click="reset()">CLEAR</button>
+                        </div>
+                        <div class="col col-30"></div>
+                        <div class="col col-20">
+                        <a  ui-sref="tabsController.pendingCards" id="card-save" class="button button-balanced" ng-click="add(cardData)">SAVE</a>
+                        </div>
+                    </div>
+                    <div class="spacer" style="width: 266px; height: 32px;"></div>
+
+                    <div class="list">
+               <!-- <div class="item item-input-inset">
+                    <!--<label class="item-input-wrapper">
+                        <input type="text" placeholder="anything to save" ng-model="newThing">
+                    </label>
+                    <button class="button button-clear button-positive icon" ng-click="add(newThing)">
+                        <i class="ion-ios-plus-outline"></i> Add
+                    </button>
+                </div>-->
+            </div>
+
+            <ion-list show-delete="false" can-swipe="true">
+                <ion-item ng-repeat="thing in things track by $index">
+                    {{thing}}
+                    <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
+                </ion-item>
+            </ion-list>
+                </form>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>
