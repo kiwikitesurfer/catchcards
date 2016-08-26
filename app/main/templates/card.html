@@ -4,10 +4,16 @@
             <div class="item item-body " id="card-list-item-container1">
                 <form id="card-form6" class="list ">
                     <label class="item item-input " id="userName" name="userName">
-                        <span class="input-label">Name:{{thing.userName}}</span><!-- need to pull selectedName fro profile-->
+                        <span class="input-label">Name:</span><!-- need to pull selected userName from profile-->
                         <input type="text" ng-model="cardData.userName">
                     </label>
                 </form>
+                 <ion-list show-delete="false" can-swipe="true">
+                   <ion-item ng-repeat="name in names track by $index">
+                     NAME : {{name.profileName}}
+                     <ion-option-button class="button-assertive ion-trash-b" ng-click="removeName(name)"></ion-option-button>
+                   </ion-item>
+                </ion-list>
 
 
                 <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
@@ -15,7 +21,7 @@
                     <label class="item item-input" id="currentDate" name="currentDate">
                         <span class="input-label">currentDate</span>
                         <input type="date" placeholder="" ng-model="cardData.currentDate">
-                        <!--<button ng-click="">{{currentDate}}</button>    <!--use current date needs fixing-->
+                        <!--<button ng-click="">{{currentDate}}</button>    <!--click to use current date needs fixing-->
                     </label>
                     <label class="item item-input" id="species" name="species">
                         <span class="input-label">Species</span>

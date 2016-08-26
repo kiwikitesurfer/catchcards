@@ -4,13 +4,13 @@
             <div class="item item-body " id="w_Card-list-item-container5">
                 <form id="w_Card-form7" class="list ">
                     <label class="item item-input " id="w_Card-textarea2" name="user_name">
-                        <span class="input-label">Name:</span><textarea placeholder=""></textarea>
+                        <span class="input-label">Name:</span><textarea placeholder="{{thing}}">{{thing.userName}}</textarea>
                     </label>
                 </form>
                 <p id="w_Card-markdown4" style="margin-top:0px;color:#0C0B0B;" class=" ">CATCH DETAILS</p>
                 <form id="w_Card-form8" class="list ">
                     <label class="item item-input " id="w_Card-textarea3" name="species">
-                        <span class="input-label">Species</span><textarea placeholder="name here"></textarea>
+                        <span class="input-label">Species</span>{{thing}}<textarea placeholder="name here">{{thing.species}}</textarea>
                     </label>
                     <label class="item item-input " id="w_Card-textarea4" name="hooked">
                         <span class="input-label">Hooked</span><textarea placeholder="">date_H</textarea>
@@ -65,6 +65,12 @@
                         </ion-list>
                         <a ui-sref="tabsController.pendingCards" id="w_Card-button4" class=" button button-positive  button-block ">SAVE</a>
                     </div>
+                    <ion-list show-delete="false" can-swipe="true">
+                      <ion-item ng-repeat="thing in things track by $index">
+                        {{thing}}
+                        <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
+                      </ion-item>
+                    </ion-list>
                 </form>
             </div>
         </form>

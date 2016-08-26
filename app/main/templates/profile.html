@@ -11,19 +11,18 @@
             </label>
         </ion-list>
         <ion-list show-delete="false" can-swipe="true">
-                <ion-item ng-repeat="name in names track by $index">
-                    {{name}}
-                    <ion-option-button class="button-assertive ion-trash-b" ng-click="removeName(name)"></ion-option-button>
-                </ion-item>
+            <ion-item ng-repeat="name in names track by $index">
+                NAME : [{{$index +1}}] {{name.profileName}}
+                <ion-option-button class="button-assertive ion-trash-b" ng-click="removeName(name)"></ion-option-button>
+            </ion-item>
         </ion-list>
-        
-        <a  ui-sref="profile" id="user-save" class=" button button-balanced col-offset-80" ng-click="addName(userData)">SAVE</a>
-        <a ui-sref="tabsController.card" id="profile-button2" class=" button button-positive  icon-right ion-alert-circled ">CANCEL</a>
+        <a ui-sref="profile" id="user-save" class=" button button-balanced col-offset-80" ng-click="addName(userData)">SAVE</a>
+        <a ui-sref="tabsController.card" id="profile-button2" class=" button button-positive  icon-right ion-alert-circled ">CONTINUE</a>
         <label class="item item-select " id="selectedName" name="selectedName" >
-                <span class="input-label">SELECT CURRENT PROFILE</span>
-                    <select ng-model="cardData.userName">
-                        <option ng-repeat="name in names track by $index">{{name.profileName}}</option>
-                    </select>
+          <span class="input-label">SELECT CURRENT PROFILE</span>
+          <select ng-model="cardData.userName">
+            <option ng-repeat="name in names track by $index">{{name.profileName}}</option>
+          </select>
         </label>
     </ion-content>
 </ion-view>

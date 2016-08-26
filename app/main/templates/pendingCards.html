@@ -5,17 +5,17 @@
             <ion-list id="pendingCards-list8" class=" ">
                 <ion-item id="pendingCards-list-item15" ui-sref="tabsController.w_Card" class="  ">Item</ion-item>
                 <ion-list show-delete="shouldShowDelete" can-swipe="true">
-                    <ion-item ng-repeat="thing in things track by $index">
+                    <ion-item ng-repeat="thing in things track by $index" ui-sref="tabsController.w_Card">
                         <ion-delete-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-delete-button>
                         Caught By: {{thing.userName}}<br>
                         Date : {{thing.currentDate}}<br>
                         Species : {{thing.newSpecies}}<br>
                         Time Hooked : {{thing.newHooked}}<br>
-                        Time Landed : {{thing.newBoated}}<br>
+                        Time Landed : {{thing.newLanded}}<br>
                         Catch Method: {{thing.newMethod}}<br>
                         Tag Number : {{thing.newTag}}<br>
-                        Location : {{thing.newlocation}}<br>
-                        Boat Name : {{thing.newBoat}}<br>
+                        Location : {{thing.newLocation}}<br>
+                        Boat Name : {{thing.newBoatName}}<br>
                         Skipper Name : {{thing.newSkipper}}<br>
                     <ion-option-button class="button-calm ion-android-mail" ng-click="send(thing)"></ion-option-button>
                 </ion-item>
