@@ -24,7 +24,7 @@ angular.module('main', [
        views: {
          'tab1': {
            templateUrl: 'main/templates/card.html',
-           controller: 'cardCtrl'
+           controller: 'cardCtrl as ctrl'
          }
        }
      })
@@ -38,7 +38,7 @@ angular.module('main', [
      // },
       'tab2': {
         templateUrl: 'main/templates/w_Card.html',
-        controller: 'w_CardCtrl'
+        controller: 'w_CardCtrl as ctrl'
       }
     }
   })
@@ -58,13 +58,9 @@ angular.module('main', [
   .state('tabsController.pendingCards', {
     url: '/pending',
     views: {
-      //'tab1': {
-      //  templateUrl: 'main/templates/pendingCards.html',
-      //  controller: 'pendingCardsCtrl'
-     // },
       'tab2': {
         templateUrl: 'main/templates/pendingCards.html',
-        controller: 'pendingCardsCtrl'
+        controller: 'pendingCardsCtrl as ctrl'
       }
     }
   })
@@ -74,7 +70,7 @@ angular.module('main', [
     views: {
       'tab3': {
         templateUrl: 'main/templates/completed.html',
-        controller: 'completedCtrl'
+        controller: 'completedCtrl as ctrl'
       }
     }
   })
@@ -84,7 +80,7 @@ angular.module('main', [
     views: {
       'tab0': {
         templateUrl: 'main/templates/profile.html',
-        controller: 'profileCtrl'
+        controller: 'profileCtrl as ctrl'
       }
     }
   })
@@ -98,7 +94,7 @@ angular.module('main', [
   .state('profile', {
     url: '/profile1',
     templateUrl: 'main/templates/profile.html',
-    controller: 'profileCtrl'
+    controller: 'profileCtrl as ctrl'
   });
 
 });

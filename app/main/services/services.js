@@ -6,7 +6,8 @@ angular.module('services', [])
 
   $localStorage = $localStorage.$default({
     things: [],
-    names: []
+    names: [],
+    user: []
   });
 
   var _getAll = function () {
@@ -24,7 +25,13 @@ angular.module('services', [])
   var _addName = function (name) {
     $localStorage.names.push(name);
   };
-
+//save current user
+  var _addUser = function (name) {
+    $localStorage.user.push(name);
+  };
+  var _getUser = function () {
+    return $localStorage.user;
+  };
 
   var _remove = function (thing) {
     $localStorage.things.splice($localStorage.things.indexOf(thing), 1);
@@ -32,6 +39,10 @@ angular.module('services', [])
 
   var _removeName = function (name) {
     $localStorage.names.splice($localStorage.names.indexOf(name), 1);
+  };
+
+  var _removeUser = function (name) {
+    $localStorage.user.splice($localStorage.user.indexOf(name), 1);
   };
 
   var _reset = function () {
@@ -43,8 +54,11 @@ angular.module('services', [])
     getAllNames: _getAllNames,
     add: _add,
     addName: _addName,
+    addUser: _addUser,
+    getUser: _getUser,
     remove: _remove,
     removeName: _removeName,
+    removeUser: _removeUser,
     reset: _reset
   };
 })

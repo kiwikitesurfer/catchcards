@@ -11,10 +11,12 @@ angular.module('controllers', [])
     $scope.currentDate = new Date().toDateString();
 
     $scope.things = StorageService.getAll();
+    $scope.user = StorageService.getUser();
 
     $scope.add = function (newThing) {
       StorageService.add(newThing);
     };
+
     $scope.remove = function (thing) {
       StorageService.remove(thing);
     };
@@ -27,6 +29,10 @@ angular.module('controllers', [])
 
     $scope.removeName = function (name) {
       StorageService.removeName(name);
+    };
+
+     $scope.removeUser = function (name) {
+      StorageService.removeUser(name);
     };
   //$scope.reset = function (thing) {
     //StorageService.reset();
@@ -96,16 +102,34 @@ angular.module('controllers', [])
   function ($scope, $stateParams, StorageService) {
 
     $scope.names = StorageService.getAllNames();
+    $scope.user = StorageService.getUser();
 
     $scope.addName = function (newName) {
-      StorageService.addName(newName);
+      StorageService.addName(newName); //add name to storage
+      alert("Thanks " + newName.profileName + "your profile has been added");//alert popup on submit
+      this.userData = null; //clear form data
     };
 
     $scope.removeName = function (name) {
       StorageService.removeName(name);
     };
+
+    $scope.addUser = function (newName) {
+      StorageService.addUser(newName);
+    };
+    $scope.removeUser = function (name) {
+      StorageService.removeUser(name);
+    };
+
+    $scope.reset = function (name) {
+      StorageService.reset(name);
+    };
   //$scope.reset = function (name) {
     //StorageService.reset();
   //};
+    this.userName = {
+      input: '',
+      code: ''
+    };
 
   }]);
