@@ -5,14 +5,15 @@
               <ion-list show-delete="false" can-swipe="true">
                 <ion-item class="item item-input " id="userName" name="userName">
                     <span class="input-label">PROFILE : [{{$index+1}}] {{user}}</span>
+                    <p>{{user}}</p>
                     <ion-option-button class="button-assertive ion-trash-b" ng-click="removeUser(name)"></ion-option-button>
                 </ion-item>
                 <div class="spacer" style="width: 266px; height: 10px;"></div>
                 <div class="row">
-                  <div class="col col-30">
+                  <div class="col col-50">
                   <a  ui-sref="tabsController.profile" id="card-save" class="button button-balanced" ng-click="removeUser(name)">Change User</a>
                   </div>
-                  <div class="col col-10"></div>
+                 
                   <div class="col col-50"></div>
                 </div>
               </ion-list>
@@ -20,7 +21,7 @@
                 <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
                 <form id="card-form1" class="list ">
                     <label class="item item-input" id="currentDate" name="currentDate">
-                        <span class="input-label">currentDate</span>
+                        <span class="input-label">current Date</span>
                         <input type="date" placeholder="" ng-model="cardData.currentDate">
                         <!--<button ng-click="">{{currentDate}}</button>    <!--click to use current date needs fixing-->
                     </label>
