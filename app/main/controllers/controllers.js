@@ -31,7 +31,7 @@ angular.module('controllers', [])
       StorageService.removeName(name);
     };
 
-     $scope.removeUser = function (name) {
+    $scope.removeUser = function (name) {
       StorageService.removeUser(name);
     };
   //$scope.reset = function (thing) {
@@ -106,7 +106,7 @@ angular.module('controllers', [])
 
     $scope.addName = function (newName) {
       StorageService.addName(newName); //add name to storage
-      alert("Thanks " + newName.profileName + "your profile has been added");//alert popup on submit
+      alert('Thanks ' + newName.profileName + ' your profile has been added');//alert popup on submit
       this.userData = null; //clear form data
     };
 

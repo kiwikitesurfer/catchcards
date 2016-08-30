@@ -3,12 +3,12 @@
         <Form name="profileForm" novalidate>
             <ion-list id="profile-list6" class=" ">
             <label class="item item-input " id="profile-input8" required>
-                <span class="input-label">ENTER NEW PROFILE NAME : </span>
-                <input type="text" name="profileName" placeholder="" ng-model="userData.profileName" ng-minlength="5" required>
+                <span class="input-label">NEW PROFILE NAME : </span>
+                <input type="text" name="profileName" placeholder="HERE" ng-model="userData.profileName" ng-minlength="5" required>
             </label>
             <label class="item item-input " id="profile-input9">
-                <span class="input-label">ENTER NEW ACCESS NUMBER : </span>
-                <input type="number" name="profileCode" placeholder="" ng-model="userData.profileCode" ng-minlength="5" required>
+                <span class="input-label">NEW ACCESS NUMBER : </span>
+                <input type="number" name="profileCode" placeholder="HERE" ng-model="userData.profileCode" ng-minlength="5" required>
                 
             </label>
             <!--<a ui-sref="profile" id="user-save" class=" button button-balanced col-offset-10" ng-click="addName(userData)">SAVE</a>-->
@@ -24,24 +24,23 @@
         <div class="padding">
             <button type="button" class="button button-block button-positive" ng-disabled="profileForm.$invalid" ng-click="addName(userData)">Submit</button>
         </div>
-        <h3>USER LIST</div>
+        <h4>Choose a Profile Below</div>
         <ion-list show-delete="false" can-swipe="true">
             <ion-item ng-repeat="name in names track by $index" ng-click="addUser(name) ">
-                USER [{{$index +1}}] : {{name.profileName}} 
+                PROFILE [{{$index +1}}] : {{name.profileName}} 
                 <ion-option-button class="button-assertive ion-trash-b" ng-click="removeName(name)"></ion-option-button>
             </ion-item>
             
         </ion-list>
         
-        <a ui-sref="tabsController.card" id="profile-button2" class=" button button-positive  icon-right ion-alert-circled ">CONTINUE</a>
-        <label class="item item-select " id="selectedName" name="selectedName" >
+        <a ui-sref="tabsController.card" id="profile-button2" class=" button button-balanced  icon-right ion-forward">CLICK TO CONTINUE</a>
+        <!--<label class="item item-select " id="selectedName" name="selectedName" >
           <span class="input-label">SELECT CURRENT PROFILE</span>
           <select ng-model="ctrl.userName.input">
             <option ng-repeat="name in names track by $index">{{name.profileName}}</option>
           </select>
         </label>
-        <p>Selected : {{ctrl.userName.input}}<p/>
-        {{user}}
-        <a ng-Click="reset(user)" id="profile-button2" class=" button button-positive  icon-right ion-alert-circled ">Reset Data</a>
+        <p>Selected : {{ctrl.userName.input}}<p/>-->
+        <a ng-Click="reset(user)" id="profile-button2" class=" button button-assertive  icon-right ion-alert-circled ">Reset Data</a>
     </ion-content>
 </ion-view>
