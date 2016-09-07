@@ -10,6 +10,24 @@ angular.module('controllers', [])
 
     $scope.currentDate = new Date().toDateString();
 
+    $scope.species = {
+      availableOptions: [
+        {id: '1', name: 'Snapper'},
+        {id: '2', name: 'Kahawai'},
+        {id: '3', name: 'Kingfish'},
+        {id: '4', name: 'Trevelly'},
+        {id: '5', name: 'Blue Marlin'},
+        {id: '6', name: 'Striped Marlin'},
+        {id: '7', name: 'Black Marlin'},
+        {id: '8', name: 'Mako Shark'},
+        {id: '9', name: 'Blue Shark'},
+        {id: '10', name: 'Tope Shark'},
+        {id: '11', name: 'Albacore Tuna'},
+        {id: '12', name: 'Skipjack Tuna'},
+        {id: '13', name: 'Yellowfin Tuna'}
+      ],
+    };
+
     $scope.things = StorageService.getAll();
     $scope.user = StorageService.getUser();
 

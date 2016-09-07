@@ -20,26 +20,30 @@
                  
                 <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
                 <form id="card-form1" class="list ">
+                    <label class="item item-select " id="species" name="species" >
+                        <span class="input-label">Select Species</span>
+                        <select ng-model="cardData.newSpecies">
+                            <option value="">---Please select---</option> <!-- not selected / blank option -->
+                            <option ng-repeat="fish in species.availableOptions" title="{{fish.name}}" value="{{fish.name}}" >{{fish.name}}</option>
+                        </select>
+                    </label>
                     <label class="item item-input" id="currentDate" name="currentDate">
-                        <span class="input-label">current Date</span>
+                        <span class="input-label">Catch Date</span>
                         <input type="date" placeholder="" ng-model="cardData.currentDate">
                         <!--<button ng-click="">{{currentDate}}</button>    <!--click to use current date needs fixing-->
                     </label>
-                    <label class="item item-input" id="species" name="species">
-                        <span class="input-label">Species</span>
-                        <input type="text" placeholder="" ng-model="cardData.newSpecies">
-                    </label>
                     <label class="item item-input " id="timeHooked" name="timeHooked">
-                        <span class="input-label">Hooked</span>
+                        <span class="input-label">Time Hooked</span>
                         <input type="time" placeholder="" ng-model="cardData.newHooked">
                     </label>
                     <label class="item item-input " id="timeLanded" name="timeLanded">
-                        <span class="input-label">Landed</span>
+                        <span class="input-label">time Landed</span>
                         <input type="time" placeholder="" ng-model="cardData.newLanded">
                     </label>
                     <label class="item item-select " id="method" name="method" >
                         <span class="input-label">Catch Method</span>
                         <select ng-model="cardData.newMethod">
+                            <option value="">---Please select---</option> <!-- not selected / blank option -->
                             <option>Bait</option>
                             <option>Lure</option>
                             <option>Fly</option>
