@@ -33,6 +33,7 @@ angular.module('controllers', [])
 
     $scope.add = function (newThing) {
       StorageService.add(newThing);
+      this.cardData = null; //clear form data
     };
 
     $scope.remove = function (thing) {
