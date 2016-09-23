@@ -3,11 +3,12 @@
         <div class="item item-body " id="pendingCards-list-item-container3">
             <p id="pendingCards-markdown3" style="margin-top:0px;color:#000000;" class=" ">Cards to be evaluated</p>
             <ion-list id="pendingCards-list8" class=" ">
-                <ion-item id="pendingCards-list-item15" ui-sref="tabsController.w_Card" class="  ">Item</ion-item>
+                <ion-item id="pendingCards-list-item15" ui-sref="tabsController.w_Card" class="  ">Pending Cards (swipe to send)</ion-item>
                 <ion-list show-delete="shouldShowDelete" can-swipe="true">
                     <ion-item ng-repeat="thing in things track by $index" ui-sref="tabsController.w_Card">
                         <ion-delete-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-delete-button>
-                        Caught By: {{thing.userName}}<br>
+                        Angler: {{thing.userName}}<br>
+                        Code: {{thing.userCode}}<br>
                         Date : {{thing.currentDate}}<br>
                         Species : {{thing.newSpecies}}<br>
                         Time Hooked : {{thing.newHooked}}<br>

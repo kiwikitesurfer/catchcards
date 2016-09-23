@@ -4,7 +4,7 @@
             <ion-list id="profile-list6" class=" ">
             <label class="item item-input " id="profile-input8" required>
                 <span class="input-label">NEW PROFILE NAME : </span>
-                <input type="text" name="profileName" placeholder="HERE" ng-model="userData.profileName" ng-minlength="5" required>
+                <input type="text" name="profileName" placeholder="HERE" ng-model="userData.profileName" ng-minlength="3" required>
             </label>
             <label class="item item-input " id="profile-input9">
                 <span class="input-label">NEW ACCESS NUMBER : </span>
@@ -16,15 +16,15 @@
         <div class="padding">
             <p ng-show="profileForm.profileName.$error.required">* Profile Name is required</p>
             <p ng-show="profileForm.profileName.$invalid && !profileForm.profileName.$pristine">* Profile Name must be a Name</p>
-            <p ng-show="profileForm.profileName.$error.minlength">* Profile Name must be longer than 5 characters</p>
+            <p ng-show="profileForm.profileName.$error.minlength">* Profile Name must be longer than 3 characters</p>
             <p ng-show="profileForm.profileCode.$invalid && !profileForm.profileCode.$pristine">* Access Number must be a number</p>
             <p ng-show="profileForm.profileCode.$error.required">* Access Number is required</p>
             <p ng-show="profileForm.profileCode.$error.minlength">* Access Number must be longer than 5 characters</p>
         </div>
         <div class="padding">
-            <button type="button" class="button button-block button-positive" ng-disabled="profileForm.$invalid" ng-click="addName(userData)">Submit</button>
+            <button type="button" class="button button-block button-positive" ng-disabled="profileForm.$invalid" ng-click="addName(userData)">Click To Add User</button>
         </div>
-        <h4>Choose a Profile Below</div>
+        <h4>Choose a Profile Below (slide to delete)</div>
         <ion-list show-delete="false" can-swipe="true">
             <ion-item ng-repeat="name in names track by $index" ng-click="addUser(name) ">
                 PROFILE [{{$index +1}}] : {{name.profileName}} 
@@ -32,15 +32,7 @@
             </ion-item>
             
         </ion-list>
-        
         <a ui-sref="tabsController.card" id="profile-button2" class=" button button-balanced  icon-right ion-forward">CLICK TO CONTINUE</a>
-        <!--<label class="item item-select " id="selectedName" name="selectedName" >
-          <span class="input-label">SELECT CURRENT PROFILE</span>
-          <select ng-model="ctrl.userName.input">
-            <option ng-repeat="name in names track by $index">{{name.profileName}}</option>
-          </select>
-        </label>
-        <p>Selected : {{ctrl.userName.input}}<p/>-->
         <a ng-Click="reset(user)" id="profile-button2" class=" button button-assertive  icon-right ion-alert-circled ">Reset Data</a>
     </ion-content>
 </ion-view>

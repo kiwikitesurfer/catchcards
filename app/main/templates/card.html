@@ -2,10 +2,9 @@
     <ion-content padding="true" class=" manual-remove-top-padding has-header">
         <form id="card-form4" class="list ">
             <div class="item item-body " id="card-list-item-container1">
-              <ion-list show-delete="false" can-swipe="true">
-                <ion-item class="item item-input " id="userName" name="userName">
-                    <span class="input-label">PROFILE : [{{$index+1}}] {{user}}</span>
-                    <p>{{user}}</p>
+ <!--             <ion-list show-delete="false" can-swipe="true">
+                <ion-item class="item item-input " id="userName" name="userName" value="cardData.userName">
+                    <span class="input-label">[{{$index+1}}] {{user}}</span>
                     <ion-option-button class="button-assertive ion-trash-b" ng-click="removeUser(name)"></ion-option-button>
                 </ion-item>
                 <div class="spacer" style="width: 266px; height: 10px;"></div>
@@ -17,11 +16,18 @@
                   <div class="col col-50"></div>
                 </div>
               </ion-list>
-                 
+ -->                
                 <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
                 <form id="card-form1" class="list ">
-                    <label class="item item-select " id="species" name="species" >
-                        <span class="input-label">Select Species</span>
+                   <label class="item item-select " id="userNames" name="userNames" >
+                    <span class="input-label">Angler Name</span>
+                    <select ng-model="cardData.userName">
+                      <option value="">---Please select---</option> <!-- not selected / blank option -->
+                      <option ng-repeat="name in names track by $index" title="{{name}}" value="{{name.profileCode}}" >{{name.profileName}}</option>
+                    </select>
+                   </label>
+                   <label class="item item-select " id="species" name="species" >
+                        <span class="input-label">Species</span>
                         <select ng-model="cardData.newSpecies">
                             <option value="">---Please select---</option> <!-- not selected / blank option -->
                             <option ng-repeat="fish in species.availableOptions" title="{{fish.name}}" value="{{fish.name}}" >{{fish.name}}</option>
@@ -37,7 +43,7 @@
                         <input type="time" placeholder="" ng-model="cardData.newHooked">
                     </label>
                     <label class="item item-input " id="timeLanded" name="timeLanded">
-                        <span class="input-label">time Landed</span>
+                        <span class="input-label">Time Landed</span>
                         <input type="time" placeholder="" ng-model="cardData.newLanded">
                     </label>
                     <label class="item item-select " id="method" name="method" >
@@ -54,7 +60,7 @@
                         <input type="number" placeholder="" ng-model="cardData.newTag">
                     </label>
                     <label class="item item-input " id="location" name="location">
-                        <span class="input-label">Location</span>
+                        <span class="input-label">Catch Location</span>
                         <input type="text" placeholder="" ng-model="cardData.newLocation">
                     </label>
                     <label class="item item-input" id="boatName" name="boatName">
@@ -62,7 +68,7 @@
                         <input type="text" placeholder="" ng-model="cardData.newBoatName">
                     </label>
                     <label class="item item-input" id="skipperName" name="skipperName">
-                        <span class="input-label">S_Name</span>
+                        <span class="input-label">Skipper Name</span>
                         <input type="text" placeholder="Captain" ng-model="cardData.newSkipper">
                     </label>
                     <div class="spacer" style="width: 266px; height: 10px;"></div>
@@ -89,8 +95,7 @@
 
                  <ion-list show-delete="false" can-swipe="true">
                  <ion-item ng-repeat="thing in things track by $index">
-                    <p>{{thing}}<p/>
-                    <p>{{user}}<p/>
+                    <p>TESTING <br>{{thing}}<p/>
                     <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
                  </ion-item>
                  </ion-list>

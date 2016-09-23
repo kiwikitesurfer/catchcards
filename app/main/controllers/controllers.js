@@ -30,6 +30,7 @@ angular.module('controllers', [])
 
     $scope.things = StorageService.getAll();
     $scope.user = StorageService.getUser();
+    $scope.userName = StorageService.getUser();
 
     $scope.add = function (newThing) {
       StorageService.add(newThing);
