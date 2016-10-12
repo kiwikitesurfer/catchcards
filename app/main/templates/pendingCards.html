@@ -7,17 +7,17 @@
                 <ion-list show-delete="shouldShowDelete" can-swipe="true">
                     <ion-item ng-repeat="thing in things track by $index" ui-sref="tabsController.w_Card">
                         <ion-delete-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-delete-button>
-                        Angler: {{thing.userName}}<br>
-                        Code: {{thing.userCode}}<br>
-                        Date : {{thing.currentDate}}<br>
-                        Species : {{thing.newSpecies}}<br>
-                        Time Hooked : {{thing.newHooked}}<br>
-                        Time Landed : {{thing.newLanded}}<br>
-                        Catch Method: {{thing.newMethod}}<br>
-                        Tag Number : {{thing.newTag}}<br>
-                        Location : {{thing.newLocation}}<br>
-                        Boat Name : {{thing.newBoatName}}<br>
-                        Skipper Name : {{thing.newSkipper}}<br>
+                        Angler: {{thing[0].profileName}}<br>
+                        Code: {{thing[0].profileCode}}<br>
+                        Date : {{thing[1].currentDate}}<br>
+                        Species : {{thing[1].newSpecies}}<br>
+                        Time Hooked : {{thing[1].newHooked}}<br>
+                        Time Landed : {{thing[1].newLanded}}<br>
+                        Catch Method: {{thing[1].newMethod}}<br>
+                        Tag Number : {{thing[1].newTag}}<br>
+                        Location : {{thing[1].newLocation}}<br>
+                        Boat Name : {{thing[1].newBoatName}}<br>
+                        Skipper Name : {{thing[1].newSkipper}}<br>
                     <ion-option-button class="button-calm ion-android-mail" ng-click="send(thing)"></ion-option-button>
                 </ion-item>
             </ion-list>

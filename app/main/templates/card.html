@@ -17,16 +17,19 @@
                 </div>
               </ion-list>
  -->                
-                <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS <br> Today is {{currentDate}}</p>
+                <p id="card-markdown1" style="margin-top:0px;color:#0C0B0B;" class=" ">ENTER YOUR CATCH DETAILS ON THIS PAGE <br>
+                <div class="card">
+                    <div class="item item-text-wrap item-balanced">
+                        Today is {{currentDate}}
+                    </div>
+                    <div class="item item-text-wrap item-energized">
+                        Current Chosen Angler is :
+                        <div class="item balanced"> {{user[0].profileCode}} : {{user[0].profileName}}
+                        </div>
+                    </div>
+                 </p>
                 <form id="card-form1" class="list ">
-                   <label class="item item-select " id="userNames" name="userNames" >
-                    <span class="input-label">Angler Name</span>
-                    <select ng-model="cardData.userName">
-                      <option value="">---Please select---</option> <!-- not selected / blank option -->
-                      <option ng-repeat="name in names track by $index" title="{{name}}" value="{{name.profileCode}}" >{{name.profileName}}</option>
-                    </select>
-                   </label>
-                   <label class="item item-select " id="species" name="species" >
+                    <label class="item item-select " id="species" name="species" >
                         <span class="input-label">Species</span>
                         <select ng-model="cardData.newSpecies">
                             <option value="">---Please select---</option> <!-- not selected / blank option -->

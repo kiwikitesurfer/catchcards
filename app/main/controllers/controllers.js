@@ -33,7 +33,12 @@ angular.module('controllers', [])
     $scope.userName = StorageService.getUser();
 
     $scope.add = function (newThing) {
-      StorageService.add(newThing);
+      var userData = this.user[0];
+      var card = [this.cardData];
+      console.log(card);
+      console.log(userData);
+      card.splice(0, 0, userData);
+      StorageService.add(card);
       this.cardData = null; //clear form data
     };
 
